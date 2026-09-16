@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>陈俊林 Chen Junlin — 石油地质 / 油气成藏动力学</title>
+<meta name="description" content="陈俊林 Chen Junlin — 中国地质大学（武汉）地质资源与地质工程，研究方向：含油气盆地分析、油气成藏动力学、储层成岩作用。">
+<style>
+  :root{
+    --paper:#ffffff;--surface:#fafafa;--ink:#1b1b1b;--ink-soft:#565656;--ink-faint:#8a8a8a;
+    --line:#e7e7e4;--line-soft:#f0f0ee;--accent:#0e6e5e;--accent-deep:#0a5245;--accent-wash:#0e6e5e12;
+    --nav-bg:rgba(255,255,255,.82);
+    --maxw:860px;
+    --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif SC","SimSun",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#14171a;--surface:#191d20;--ink:#e9ece7;--ink-soft:#a8b1ad;--ink-faint:#727b77;
+      --line:#262c2f;--line-soft:#20262a;--accent:#4bb3a0;--accent-deep:#63c6b4;--accent-wash:#4bb3a016;
+      --nav-bg:rgba(20,23,26,.82);
+    }
+  }
+  :root[data-theme="light"]{
+    --paper:#ffffff;--surface:#fafafa;--ink:#1b1b1b;--ink-soft:#565656;--ink-faint:#8a8a8a;
+    --line:#e7e7e4;--line-soft:#f0f0ee;--accent:#0e6e5e;--accent-deep:#0a5245;--accent-wash:#0e6e5e12;--nav-bg:rgba(255,255,255,.82);
+  }
+  :root[data-theme="dark"]{
+    --paper:#14171a;--surface:#191d20;--ink:#e9ece7;--ink-soft:#a8b1ad;--ink-faint:#727b77;
+    --line:#262c2f;--line-soft:#20262a;--accent:#4bb3a0;--accent-deep:#63c6b4;--accent-wash:#4bb3a016;--nav-bg:rgba(20,23,26,.82);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+  /* ===== Nav ===== */
+  nav.top{
+    position:sticky;top:0;z-index:30;background:var(--nav-bg);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:18px}
+  .nav-name{font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:.04em;margin-right:auto}
+  .nav-links{display:flex;gap:20px;flex-wrap:wrap}
+  .nav-links a{color:var(--ink-soft);font-size:13.5px;letter-spacing:.02em}
+  .nav-links a:hover{color:var(--accent);text-decoration:none}
+  .theme-btn{background:none;border:1px solid var(--line);color:var(--ink-soft);border-radius:999px;width:30px;height:30px;cursor:pointer;font-size:14px;line-height:1;flex:0 0 auto}
+  .theme-btn:hover{color:var(--ink);border-color:var(--accent)}
+  @media (max-width:620px){.nav-links{display:none}}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ===== Hero ===== */
+  header.hero{padding:56px 0 30px}
+  .hero-row{display:flex;gap:34px;align-items:center}
+  @media (max-width:620px){.hero-row{flex-direction:column;text-align:center;gap:20px}}
+  .avatar{
+    flex:0 0 auto;width:148px;height:148px;border-radius:50%;overflow:hidden;position:relative;
+    background:linear-gradient(145deg,var(--accent),var(--accent-deep));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 24px rgba(14,110,94,.22);
+  }
+  .avatar span{font-family:var(--serif);font-size:56px;color:#fff;font-weight:700}
+  .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-text h1{font-family:var(--serif);font-size:clamp(30px,5vw,42px);margin:0;letter-spacing:.03em;font-weight:700}
+  .hero-text h1 .en{font-family:var(--sans);font-weight:500;font-size:.5em;letter-spacing:.14em;color:var(--ink-faint);margin-left:.5em;text-transform:uppercase}
+  .hero-text .role{margin:8px 0 0;font-size:17px;color:var(--ink);font-weight:500}
+  .hero-text .affil{margin:3px 0 0;font-size:15px;color:var(--ink-soft)}
+  .hero-text .interests{margin:12px 0 0;font-size:14.5px;color:var(--ink-soft);max-width:52ch}
+  .contact-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+  @media (max-width:620px){.contact-links{justify-content:center}}
+  .contact-links a{
+    display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink-soft);
+    border:1px solid var(--line);border-radius:8px;padding:5px 12px;font-weight:500;
+  }
+  .contact-links a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+  .contact-links svg{width:14px;height:14px;fill:currentColor;flex:0 0 auto}
+
+  /* ===== Sections ===== */
+  section{padding:30px 0;border-top:1px solid var(--line-soft);scroll-margin-top:60px}
+  section:first-of-type{border-top:none}
+  h2.sh{font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
+  p.about{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.85}
+
+  /* entry list */
+  .entry{display:grid;grid-template-columns:112px 1fr;gap:20px;margin:0 0 22px}
+  .entry:last-child{margin-bottom:0}
+  @media (max-width:560px){.entry{grid-template-columns:1fr;gap:2px}}
+  .entry .yr{font-size:13.5px;color:var(--ink-faint);font-weight:600;font-variant-numeric:tabular-nums;padding-top:2px;letter-spacing:.02em}
+  .entry .body .t{font-size:16.5px;font-weight:600;color:var(--ink);margin:0}
+  .entry .body .s{font-size:14px;color:var(--ink-faint);margin:2px 0 0;font-weight:500}
+  .entry .body .s .role{display:inline-block;margin-left:7px;padding:1px 9px;border-radius:999px;background:var(--accent-wash);color:var(--accent);font-size:11.5px;font-weight:600}
+  .entry .body p{font-size:14.5px;color:var(--ink-soft);margin:8px 0 0;line-height:1.78}
+  .entry .body p.courses{font-size:13.5px}
+  .entry .body p.courses b{color:var(--ink)}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+  .tags span{font-size:12.5px;padding:3px 11px;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:var(--ink-soft)}
+
+  /* publications */
+  ol.pubs{list-style:none;margin:0;padding:0;counter-reset:pub}
+  ol.pubs li{position:relative;padding:0 0 18px 40px;margin:0}
+  ol.pubs li::before{
+    counter-increment:pub;content:"[" counter(pub) "]";position:absolute;left:0;top:1px;
+    font-size:13.5px;color:var(--accent);font-weight:700;font-variant-numeric:tabular-nums;
+  }
+  ol.pubs .pt{font-size:16px;font-weight:600;color:var(--ink);margin:0;line-height:1.5}
+  ol.pubs .pm{font-size:14px;color:var(--ink-soft);margin:3px 0 0}
+  ol.pubs .venue{color:var(--accent-deep);font-style:italic}
+  .pill{display:inline-block;font-size:11.5px;font-weight:600;padding:1px 9px;border-radius:999px;background:var(--accent-wash);color:var(--accent);margin-left:7px}
+
+  /* software / projects grid */
+  .swgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:4px}
+  .sw{border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:var(--surface)}
+  .sw .n{font-size:14px;font-weight:600;color:var(--ink)}
+  .sw .d{font-size:12.5px;color:var(--ink-faint);margin-top:3px}
+
+  /* awards */
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .badges span{font-size:13px;font-weight:600;padding:5px 13px;border-radius:999px;border:1px solid var(--accent);color:var(--accent-deep)}
+
+  /* skills inline */
+  .skillrow{display:grid;grid-template-columns:112px 1fr;gap:20px;margin:0 0 14px}
+  @media (max-width:560px){.skillrow{grid-template-columns:1fr;gap:4px}}
+  .skillrow .k{font-size:13.5px;color:var(--ink-faint);font-weight:600;padding-top:3px}
+  .skillrow .v{display:flex;flex-wrap:wrap;gap:7px}
+  .skillrow .v span{font-size:13px;padding:3px 11px;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:var(--ink-soft)}
+
+  footer{border-top:1px solid var(--line);margin-top:20px;padding:24px 0 46px;color:var(--ink-faint);font-size:12.5px;text-align:center}
+
+  @media print{
+    nav.top,.theme-btn{display:none}
+    section{border-top:1px solid #ddd;break-inside:avoid}
+    body{font-size:11.5px}
+    .avatar{box-shadow:none}
+    @page{margin:14mm}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="nav-inner">
+    <span class="nav-name">陈俊林</span>
+    <div class="nav-links">
+      <a href="#about">简介</a>
+      <a href="#education">教育</a>
+      <a href="#research">研究</a>
+      <a href="#publications">成果</a>
+      <a href="#awards">荣誉</a>
+      <a href="#contact">联系</a>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="切换深浅色">☾</button>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="hero-row">
+    <div class="avatar">
+      <span>陈</span>
+      <img src="photo.jpg" alt="陈俊林" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-text">
+      <h1>陈俊林<span class="en">Chen Junlin</span></h1>
+      <p class="role">硕士研究生 · 石油地质 / 油气成藏动力学</p>
+      <p class="affil">中国地质大学（武汉） · 资源学院 · 地质资源与地质工程</p>
+      <p class="interests">研究兴趣：含油气盆地分析、油气成藏动力学、储层成岩作用、流体包裹体与古压力恢复、CO₂ 成因、生烃增压模拟。</p>
+      <div class="contact-links">
+        <a href="mailto:1552966376@qq.com" aria-label="Email">
+          <svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L3.5 6h17L12 11zm0 2.2L3 7.3V18h18V7.3l-9 5.9z"/></svg>Email
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 015.9 0c2.2-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.5 11.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>GitHub
+        </a>
+        <a href="tel:15828683552" aria-label="Phone">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.9c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.3z"/></svg>电话
+        </a>
+        <a href="#" aria-label="Location" onclick="return false" style="cursor:default">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>武汉 · 中国
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2 class="sh">简介 · About</h2>
+    <p class="about">我是中国地质大学（武汉）地质资源与地质工程专业研究生，研究聚焦含油气盆地分析与油气成藏动力学。本科毕业于成都理工大学资源勘查工程专业。我的专业基础扎实、实践经历丰富，尤其擅长以编程能力提升科研效率——独立开发了多款地质数据处理与古压力恢复软件，并尝试将机器学习方法引入测井数据解释。本科与硕士期间的社团与科研经历，培养了我较强的团队协作、快速自学与创新能力。工作之余喜欢篮球、足球、羽毛球、游泳，也热爱旅行与摄影。</p>
+  </section>
+
+  <section id="education">
+    <h2 class="sh">教育背景 · Education</h2>
+    <div class="entry">
+      <div class="yr">2021 — 至今</div>
+      <div class="body">
+        <p class="t">中国地质大学（武汉） — 硕士研究生（推免）</p>
+        <p class="s">地质资源与地质工程<span class="role">学分绩点 3.91 / 4.0</span></p>
+        <p>研究方向：含油气盆地分析、油气成藏动力学、油气地质分析技术与方法、石油油藏流体相态与 PVT、储层成岩作用。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2017 — 2021</div>
+      <div class="body">
+        <p class="t">成都理工大学 — 工学学士</p>
+        <p class="s">资源勘查工程</p>
+        <p class="courses"><b>主修课程：</b>普通地质学、构造地质学、石油与天然气地质学、沉积岩石学与岩相古地理、古生物学与地层学、层序地层学、油气地震勘探、油气地球物理测井、油气地球化学等。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2 class="sh">科研项目 · Research Experience</h2>
+    <div class="entry">
+      <div class="yr">2021 — 至今</div>
+      <div class="body">
+        <p class="t">盆地深部地质作用过程与资源效应</p>
+        <p class="s">国家自然科学基金项目<span class="role">主要人员</span></p>
+        <p>负责苏北盆地深部 CO₂ 流体成因、CO₂ 在储层中的压力演化及其对油气保存的指示意义、CO₂ 与油气成藏时间，以及 CO₂ 对烃源岩和储层中油气成藏过程的影响。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2023 — 至今</div>
+      <div class="body">
+        <p class="t">渤中地区古近系深层超深层地层超压发育模式及分布规律研究</p>
+        <p class="s">横向项目<span class="role">参与人员</span></p>
+        <p>负责渤中地区地球物理地震与测井数据的提取和压力计算，并开展生烃增压模拟。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2021 — 2022</div>
+      <div class="body">
+        <p class="t">地层异常压力演化史恢复与油气运移方向预测</p>
+        <p class="s">横向项目<span class="role">参与人员</span></p>
+        <p>负责“幕式排烃生烃增压模拟软件”的编写，并对研究区开展生烃增压模拟。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2 class="sh">学术成果 · Publications</h2>
+    <ol class="pubs">
+      <li>
+        <p class="pt">苏北盆地黄桥地区三叠系青龙组方解石脉体形成时间与流体来源<span class="pill">已接收</span></p>
+        <p class="pm"><b>陈俊林</b>（第一作者）. <span class="venue">地质科技通报</span>.</p>
+      </li>
+      <li>
+        <p class="pt">流体包裹体 CO₂ 成因与古压力恢复相关研究（英文论文）<span class="pill">修改中</span></p>
+        <p class="pm"><b>Chen Junlin</b> et al. Manuscript under revision.</p>
+      </li>
+    </ol>
+
+    <h2 class="sh" style="margin-top:26px">软件著作 · Software</h2>
+    <div class="entry">
+      <div class="yr">软著申请</div>
+      <div class="body">
+        <p class="t">烃源岩生烃增压幕式排烃演化模拟软件</p>
+        <p>基于 Python 独立开发，并已申请软件著作权。</p>
+      </div>
+    </div>
+    <div class="swgrid">
+      <div class="sw"><div class="n">甲烷包裹体古压力恢复</div><div class="d">自研数据处理工具</div></div>
+      <div class="sw"><div class="n">二氧化碳包裹体古压力恢复</div><div class="d">自研数据处理工具</div></div>
+      <div class="sw"><div class="n">稀土元素处理软件</div><div class="d">自研数据处理工具</div></div>
+      <div class="sw"><div class="n">荧光光谱分析软件</div><div class="d">自研数据处理工具</div></div>
+      <div class="sw"><div class="n">泥岩 TOC 神经网络预测</div><div class="d">PyTorch / MATLAB · 测井数据</div></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="sh">技能 · Skills</h2>
+    <div class="skillrow"><div class="k">专业软件</div><div class="v"><span>Basinmod</span><span>PetroMod</span><span>CDR</span><span>石文</span><span>ImageJ</span></div></div>
+    <div class="skillrow"><div class="k">编程 · 工具</div><div class="v"><span>Python</span><span>MATLAB</span><span>PyTorch</span><span>Photoshop</span><span>Premiere</span></div></div>
+    <div class="skillrow"><div class="k">英语</div><div class="v"><span>CET-4 · 489</span><span>CET-6 · 481</span></div></div>
+  </section>
+
+  <section id="awards">
+    <h2 class="sh">荣誉奖励 · Honors &amp; Awards</h2>
+    <div class="badges">
+      <span>国家励志奖学金</span><span>四川省优秀毕业生</span><span>四川省综合素质 A</span>
+      <span>校优生</span><span>校优干</span><span>优秀团员</span>
+    </div>
+    <div class="entry">
+      <div class="yr">2022</div>
+      <div class="body">
+        <p class="t">学校科技论文报告会 — 院级一等奖 / 校级二等奖</p>
+        <p class="s">第一主讲人</p>
+        <p>《流体包裹体中 CO₂ 成因和古压力恢复及其意义——以苏北盆地黄桥气田为例》。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2021</div>
+      <div class="body">
+        <p class="t">学校科技论文报告会 — 院级一等奖 / 校级三等奖</p>
+        <p class="s">第一主讲人</p>
+        <p>《流体包裹体中 CO₂ 成因研究——基于高分辨率共聚焦激光拉曼光谱学特征》。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2021</div>
+      <div class="body">
+        <p class="t">院优秀毕业论文</p>
+        <p>《重庆石柱地区寒武系龙王庙组沉积储层特征》。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2019 — 2020</div>
+      <div class="body">
+        <p class="t">全国大学生“互联网+”创新创业大赛 — 四川省铜奖</p>
+        <p class="s">第一负责人</p>
+        <p>参赛项目《石油勘探预言家》。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2018 — 2019</div>
+      <div class="body">
+        <p class="t">国家级大学生创新创业训练计划 — 入选并结题</p>
+        <p class="s">第一负责人</p>
+        <p>项目《简南地区微生物碳酸盐岩孔隙结构表征》。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2017 — 2021</div>
+      <div class="body">
+        <p class="t">体育竞赛</p>
+        <p>校足球队首发前锋，获理工杯亚军、甲级联赛亚军各一次；2019 年校运会跳远冠军；作为首发获资源学院研究生新生杯、资源杯篮球赛冠军。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities">
+    <h2 class="sh">校园与实习 · Activities &amp; Field Practice</h2>
+    <div class="entry">
+      <div class="yr">2017 — 2020</div>
+      <div class="body">
+        <p class="t">学生工作</p>
+        <p>能源学院学生会副主席（2019–2020）；学院创新创业促进会外联部部长、校教务处学生工作信息中心秘书部部长（2018–2019）；校组织求真社成员（2017–2018）；四年间为学院足球队首发队员。</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="yr">2018 — 2020</div>
+      <div class="body">
+        <p class="t">野外地质实习</p>
+        <p>峨眉山地质认识实习（2018.03）、剑门关一带地质实习（2019.05）、马角坝油气田勘探综合实习（2019.12）、油矿生产实习（2020.12）。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="sh">联系方式 · Contact</h2>
+    <div class="skillrow"><div class="k">邮箱</div><div class="v"><a href="mailto:1552966376@qq.com">1552966376@qq.com</a></div></div>
+    <div class="skillrow"><div class="k">电话</div><div class="v">158 2868 3552</div></div>
+    <div class="skillrow"><div class="k">单位</div><div class="v">中国地质大学（武汉）· 资源学院</div></div>
+  </section>
+
+</main>
+
+<footer>© 2026 陈俊林 Chen Junlin · Built with plain HTML, hosted on GitHub Pages</footer>
+
+<script>
+  (function(){
+    var root=document.documentElement,btn=document.getElementById('themeBtn');
+    function pd(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches}
+    function set(m){root.setAttribute('data-theme',m);btn.textContent=(m==='dark')?'☀':'☾'}
+    set(pd()?'dark':'light');
+    btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark')});
+  })();
+</script>
+
+</body>
+</html>
